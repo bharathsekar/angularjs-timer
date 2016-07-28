@@ -2,7 +2,7 @@
 Simple angular directive for a time ticker
 
 #Usage
-<timer init-duration="{{init time in milliseconds}}"></timer>
+/<timer init-duration="{{init time in milliseconds}}"></timer>
 init-duration is optional
 If not specified it will start from 00:00:00
 
