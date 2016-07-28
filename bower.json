@@ -7,11 +7,8 @@
   },
   "ignore": [
     "**/.*",
-    "dist",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
   ],
   "author": "Bharath Sekar",
   "licenses": [
