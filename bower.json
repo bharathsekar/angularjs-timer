@@ -1,0 +1,23 @@
+{
+  "name": "angularjs-timer",
+  "description": "Simple time ticker for AngularJS",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": ">=1.0.0"
+  },
+  "ignore": [
+    "**/.*",
+    "dist",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "author": "Bharath Sekar",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ]
+}
