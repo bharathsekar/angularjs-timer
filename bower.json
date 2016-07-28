@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "angular": ">=1.0.0"
-  }
+  },
   "main": [
     "dist/js/timer.directive.min.js"
   ],
