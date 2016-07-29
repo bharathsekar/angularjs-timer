@@ -3,9 +3,11 @@ Simple angular directive for a time ticker
 
 #Usage
 ```
-<timer init-duration="{{init time in milliseconds}}"></timer>
+<timer init-duration="{{init time in milliseconds}}" display-pattern="{{display-pattern}}"></timer>
 ```
-init-duration is optional and if not specified it will start from 00:00:00
+init-duration is optional and if not specified it will start from 0 ms
+
+display-pattern can be specified too, hh -> hours, mm -> minutes, ss -> seconds. If not specified the display will be hh:mm:ss format i.e. 00:00:00 format.
 
 #Details
 The directive works using the emit events
