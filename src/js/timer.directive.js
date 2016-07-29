@@ -15,6 +15,10 @@
                 if(attrs.initDuration) {
                     duration = attrs.initDuration;
                 }
+                var displayPattern = 'hh:mm:ss';
+                if(attrs.displayPattern) {
+                    displayPattern = attrs.displayPattern;
+                }
                 setHtml();
                 function setHtml() {
                     element.html(getHumanizedDuration());
@@ -51,14 +55,34 @@
 
                 function getHumanizedDuration() {
                     var inSeconds = duration/1000;
-                    var hours   = Math.floor(inSeconds / 3600).toFixed(0);
-                    var minutes = Math.floor((inSeconds - (hours * 3600)) / 60).toFixed(0);
-                    var seconds = inSeconds - (hours * 3600) - (minutes * 60).toFixed(0);
-
-                    if (hours   < 10) {hours   = "0"+hours;}
-                    if (minutes < 10) {minutes = "0"+minutes;}
-                    if (seconds < 10) {seconds = "0"+seconds;}
-                    return hours+':'+minutes+':'+seconds;
+                    var displayTime = displayPattern;
+                    var hours = 0;
+                    var minutes = 0;
+                    if(displayTime.indexOf('hh') >= 0) {
+                        hours = Math.floor(inSeconds / 3600).toFixed(0);
+                        if(hours < 10) {
+                            displayTime = displayTime.replace(/hh/g,'0' + String(hours));
+                        } else {
+                            displayTime = displayTime.replace(/hh/g,String(hours));
+                        }
+                    }
+                    if(displayTime.indexOf('mm') >= 0) {
+                        minutes = Math.floor((inSeconds - (hours * 3600)) / 60).toFixed(0);
+                        if(minutes < 10) {
+                            displayTime = displayTime.replace(/mm/g,'0' + String(minutes));
+                        } else {
+                            displayTime = displayTime.replace(/mm/g,String(minutes));
+                        }
+                    }
+                    if(displayTime.indexOf('ss') >= 0) {
+                        var seconds = (inSeconds - (hours * 3600) - (minutes * 60).toFixed(0));
+                        if(seconds < 10) {
+                            displayTime =  displayTime.replace(/ss/g,'0' + String(seconds));
+                        } else {
+                            displayTime =  displayTime.replace(/ss/g,String(seconds));
+                        }
+                    }
+                    return displayTime;
                 }
 
                 element.on('$destroy', function() {
