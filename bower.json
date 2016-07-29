@@ -1,7 +1,7 @@
 {
   "name": "angularjs-timer",
   "description": "Simple time ticker for AngularJS",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "dependencies": {
     "angular": ">=1.0.0"
   },
