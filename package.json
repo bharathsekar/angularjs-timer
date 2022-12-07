@@ -3,7 +3,7 @@
   "description": "Simple angular directive for a time ticker",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bunbutter/angularjs-timer.com.git"
+    "url": "https://github.com/bharathsekar/angularjs-timer.com.git"
   },
   "private": false,
   "version": "1.1.2",
